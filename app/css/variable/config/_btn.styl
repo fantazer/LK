@@ -1,0 +1,152 @@
+// ============================ Buttons ============================
+btnStyle(bg-btn,color-btn)
+	background bg-btn
+	color color-btn
+	border 1px solid color-btn
+	&:hover
+		background darken(bg-btn,20)
+		color color-btn
+
+btnStyleLight(br-btn,color-btn)
+	color color-btn
+	border br-btn solid color-btn
+	&:hover
+		color darken(color-btn,20)
+		border br-btn solid darken(color-btn,20)
+
+.btn
+	up()
+	br(0px)
+	tr(all)
+	@extend .type--md
+	display inline-block
+	background none
+	color $brown--dark
+	text-align: center
+	border 1px solid #cbbaac
+	position: relative
+	font-weight 500
+	&:hover
+		cursor pointer
+		color $mark
+		border 1px solid $mark
+
+.btn--sm
+	@extend .btn
+	+below(480px)
+		min-width auto
+
+	padding 10px 30px
+	min-width 140px
+	.nav-icon
+		size 10px
+
+.btn--md
+	+below(480px)
+		min-width auto
+	@extend .btn
+	padding 20px 55px
+	min-width 210px
+
+.btn--lg
+	@extend .btn
+	font-size 20px
+	padding 10px 30px
+
+.btn--mobile
+	@extend .btn
+	+below(768px)
+		width 100%
+		text-align center
+
+.btn--mark
+	@extend .btn
+	color white
+	background $mark
+	border 1px solid $mark
+	.nav-icon
+		fill white
+	&:hover
+		background-color lighten($mark,10)
+		color white
+	&:active
+		background-color lighten($mark,10)
+		color white
+	input[type="submit"]
+		border 0
+	.nav-icon
+		fill white
+
+.btn--disable
+	@extend .disabled
+
+.btn--light
+	@extend .btn
+	border 1px solid $mark
+	background-color #ffffff
+	color $mark
+	&:hover
+		color white
+		background $mark
+	.nav-icon
+		fill blue
+
+.btn--grey
+	@extend .btn
+	border 1px solid #dddddd
+	background-color #ffffff
+
+.btn--dotted
+	@extend .btn
+	border 1px dashed #d7d7d7
+	background-color #ffffff
+	text-align center
+
+.btn--white
+	@extend .btn
+	border 1px solid rgba(255, 255, 255, 0.9)
+	color rgba(255, 255, 255, 0.9)
+	.nav-icon
+		fill rgba(255, 255, 255, 0.9)
+
+.btn--icon
+	flex(mid)
+
+.nav-icon
+	display inline-block
+	size 20px
+	margin 0 10px
+
+.btn--hover
+	transform: perspective(100px) translateZ(0)
+	box-shadow: 0 0 1px transparent
+	position: relative
+	overflow: hidden
+	transition-property: color
+	transition-duration: 0.1s
+	&:before
+		content: ""
+		position: absolute
+		z-index: -1
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background: gray
+		border-radius: 10%
+		transform: scale(0)
+		transition-property: transform
+		transition-duration: 0.35s
+		transition-timing-function: ease-out
+	&:hover,&:focus,&:active
+		color: white
+
+.btn--hover:hover:before
+	transform: scale(2)
+.btn--hover:focus:before
+	transform: scale(2)
+.btn--hover:active:before
+	transform: scale(2)
+
+button
+	font-family $v-font

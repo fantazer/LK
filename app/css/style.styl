@@ -1,0 +1,311 @@
+@import 'rupture'
+@import "variable/_function.styl"
+@import "variable/_fonts.styl"
+@import "variable/_ie.styl"
+@import "variable/_helper.styl"
+@import "variable/_default.styl"
+@import "variable/config/_color.styl"
+@import "variable/config/_typography.styl"
+@import "variable/config/_btn.styl"
+@import "variable/config/_input.styl"
+@import "../module/**/*"
+
+body
+	@extend .type--main
+	font-family $v-font
+	color $main-text-color
+	line-height 1.4
+	letter-spacing 0.01em
+	font-weight: 400
+
+.main-cont
+	center(1200px,10px)
+
+.page
+
+	min-height 100vh
+
+
+// animate top menu
+@keyframes slideInDown
+	from
+		transform: translate3d(0, -100%, 0)
+		visibility: visible;
+	to
+		transform: translate3d(0, 0, 0)
+
+.shrink
+	position fixed
+	top 0
+	left 0
+	background white
+	width 100%
+	margin 0
+	animation:  slideInDown  1s 1 ease-in-out;
+	z-index 10
+// animate top menu === end
+
+.page
+	f()
+
+// toolbar
+
+//.toolbar
+	//padding: 30px
+.toolbar-wrap
+	width: 350px
+	border-right 1px solid $border-color
+
+.toolbar-head
+	height:80px
+	padding: 20px
+	f()
+	align-items center
+	border-bottom 1px solid $border-color
+
+// toolbar === end
+
+.content
+	background: #fafafa
+.content-wrap
+	width calc(100% - 300px)
+	//background: #f2f3f8
+
+.content-head
+	height: 80px
+	border-bottom 1px solid $border-color
+
+.info
+	padding: 2% 5%
+	max-width 1000px
+	border-right 1px solid $border-color
+	min-height  100vh
+
+
+.nav
+	margin-top: 40px
+.nav__el
+	f()
+	align-items center
+	padding: 15px 30px
+	//border-bottom 1px solid $border-color
+	cp()
+	&:hover
+		.icon
+			fill $mark
+		.nav__el-text
+			color $mark
+.nav__el--active
+	background: #f2f6ff
+	border-left 5px solid $mark
+	.icon
+		fill $mark!important
+	.nav__el-text
+		color $mark
+
+.nav__el-icon
+	margin-right: 30px
+	flex(mid)
+	.icon
+		tr()
+		size 22px
+		fill $gray
+.nav__el-text
+	tr()
+	color $gray
+	font-size: 14px
+	font-weight: 700
+.nav__el-val
+	size 24px
+	flex(mid)
+	round()
+	background: $snow
+	color $mark
+	font-size: 10px
+	margin-left auto
+	font-weight: 700
+
+
+
+.course-list
+	margin-top: 60px
+.course-list__el
+	br(4px)
+	align-items center
+	background: #fdfdfd
+	margin-bottom: 10px
+	border 1px solid #f2f6ff
+	//border 1px solid $border-color
+
+.course-list__el-head
+	f()
+	padding: 15px 15px 15px 30px
+	background: white
+
+.course-list__el-icon
+	margin-right: 10px
+	margin-left auto
+	flex(mid)
+	.icon
+		size 14px
+		fill $mark
+.course-list__el-name
+	font-weight: 600
+	font-size: 20px
+	color black
+.course-list__el-cont
+	background: white
+	padding: 30px
+	border-top 1px solid $border-color-light
+
+.course-answer
+	width: 80%
+	border-bottom 1px solid $border-color-light
+	margin-bottom: 30px
+	.select2
+		width: 100%!important
+	.select2-selection
+		padding: 10px
+		border 1px solid $border-color-light!important
+	.select2-container--default .select2-selection--multiple .select2-selection__choice
+		border 1px solid $border-color-light!important
+		background: white
+		color black
+		padding: 4px 10px
+		display inline-block
+	.input-row
+		margin-bottom: 30px
+.course-answer__title
+	font-weight: 400
+	margin-bottom: 20px
+	font-size: 14px
+	font-family:Rubik
+
+.user
+	f()
+	align-items center
+.user__icon
+	.icon
+		size 48px
+		flex(mid)
+		fill $mark
+	margin-right: 20px
+
+.user__name
+	font-weight: 700
+	font-size: 18px
+	color black
+
+.info-title
+	font-size: 38px
+	font-weight: 400
+	color black
+	font-family: Rubik
+	margin-bottom: 40px
+	
+// mark
+.mark
+	flex(between)
+	margin-bottom: 30px
+.mark__icon
+	size 38px
+	border 1px solid $border-color
+	round()
+	flex(mid)
+	.icon
+		size 20px
+.mark-list
+	flex(between)
+	flex-grow 1
+.mark-list__el
+	flex(mid)
+	round()
+	tr()
+	border 1px solid $border-color
+	size 38px
+	cp()
+	&:hover
+		color $mark
+		border 1px solid $mark
+.mark__icon--false
+	border-color $yellow
+	.icon
+		fill $yellow
+.mark__icon--true
+	border-color green
+	.icon
+		fill green
+
+// mark === end
+
+.course-head
+	flex(between)
+	margin-bottom: 30px
+
+.teacher
+	f()
+	align-items center
+.teacher-img
+	size 48px
+	bg-full()
+	round()
+	margin-right: 10px
+	background-position top center
+.teacher-name-text
+	font-size: 12px
+	font-weight: 700
+	font-family:Rubik
+	color $mark
+.course-time
+	padding: 4px 15px
+	border 1px solid $mark
+	br(20px)
+	font-size: 12px
+	font-family:Rubik
+	color $mark
+	font-weight: 500
+
+//.teacher-name
+
+.docs
+	margin-bottom: 30px
+.docs-head
+	flex(between)
+	padding: 20px
+	border 1px solid $border-color-light
+.docs-head__text
+	f()
+	align-items center
+	font-weight: 600
+	color black
+	.icon
+		size 20px
+		margin-right: 10px
+
+.docs-head__toggle
+	margin-left auto
+	.icon
+		size 12px
+
+.doc-wrap
+	display none
+
+.doc-el
+	f()
+	padding: 20px
+	border-bottom 1px solid $border-color
+	background: #fafafa
+	&:last-child
+		border-bottom 0
+.doc-el__icon
+	.icon
+		size 18px
+		fill black
+		margin-right: 10px
+.doc-el__name
+	color black
+.doc-el__download
+	margin-left auto
+	.icon
+		size 18px
+		fill $mark

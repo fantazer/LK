@@ -1,0 +1,1 @@
+$(document).ready(function(){var s=250,e=$(".header"),o=e.height();$(window).scroll(function(){var d=$(this).scrollTop();d>=s?($("body").css("paddingTop",o),e.addClass("shrink")):($("body").css("paddingTop",0),e.removeClass("shrink"))}),$(window).resize(function(){o=e.height()}),$(".beauty-select").select2()});

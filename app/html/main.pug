@@ -1,0 +1,121 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.page
+	.toolbar-wrap
+		.toolbar-head
+			.user
+				.user__icon
+					+icon("profile","icon")
+				.user__name Иван Петров
+		.toolbar
+			.nav
+				.nav__el.nav__el--active
+					.nav__el-icon
+						+icon("cart","icon")
+					.nav__el-text Ваши курсы
+					.nav__el-val 10
+				.nav__el
+					.nav__el-icon
+						+icon("open-book","icon")
+					.nav__el-text Расписание курсов
+				.nav__el
+					.nav__el-icon
+						+icon("discount","icon")
+					.nav__el-text Акции
+				.nav__el
+					.nav__el-icon
+						+icon("live-streaming","icon")
+					.nav__el-text Новости
+				.nav__el
+					.nav__el-icon
+						+icon("target","icon")
+					.nav__el-text Тренажер
+				.nav__el
+					.nav__el-icon
+						+icon("contact","icon")
+					.nav__el-text Контакты
+				.nav__el
+					.nav__el-icon
+						+icon("shop","icon")
+					.nav__el-text Карта кафе
+	.content-wrap
+		.content
+			.content-head
+			.info
+				.info-title Личный кабинет
+				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur atque debitis explicabo maxime minima nobis odio praesentium quisquam recusandae.
+				.course-list
+					.course-list__el
+						.course-list__el-head
+							.course-list__el-name RCV Курс «Проведение изменений в ИТ в соответствии с ITIL®» Онлайн
+							.course-list__el-icon
+								+icon("arrow-down-fat","icon")
+						.course-list__el-cont
+							.course-head
+								.teacher
+									.teacher-img(style="background-image:url('img/teacher.jpg')")
+									.teacher-name
+										.teacher-name-text Тренер
+										.teacher-name-val Владимир Аношин
+								.course-time Дата курса: 12.12.2019
+							.docs
+								.docs-head
+									.docs-head__text
+										+icon("folder","icon")
+										span Документы для курса
+									.docs-head__toggle
+										+icon("arrow-up","icon")
+								.doc-wrap
+									- for (var i=0;i<10;i++)
+										.doc-el
+											.doc-el__icon
+												+icon("clip","icon")
+											.doc-el__name  04. Change priority example v3.1 #{i}
+											.doc-el__download
+												+icon("download","icon")
+							.docs
+								.docs-head
+									.docs-head__text
+										+icon("info","icon")
+										span Вопросы по курсу
+									.docs-head__toggle
+										+icon("arrow-up","icon")
+
+							form(action="#")
+									-
+										var items = [
+											'Вы довольны качеством курса?',
+											'На сколько Вам понравилась работа преподавателя?',
+											'Какие у Вас впечатление от организации учебного процесса?',
+											'Курс был полезен для Вас?',
+											'Порекомендуете курс коллегам?',
+											];
+									each item,j in items
+
+										.course-answer
+											.course-answer__title  #{j+1}. #{item}
+											.mark
+												.mark__icon.mark__icon--false
+													+icon("like","icon")
+												- for (var i=1;i<11;i++)
+													.mark-list__el #{i}
+												.mark__icon.mark__icon--true
+													+icon("like","icon")
+
+											if(j < 2)
+												.input-cont
+													.input-row
+														input(type="text" placeholder="Прокомментируйте свою оценку:" class="input")
+							.course-answer
+								.course-answer__title Какие курсы вы хотели бы посетить?
+								select.beauty-select(multiple="multiple")
+									option Москва
+									option Москва
+									option Москва
+									option Волгоград
+									option Москва
+									option Волгоград
+									option Волгоград
+									option Волгоград
+include ./block_html/_script.pug

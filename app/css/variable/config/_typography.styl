@@ -1,0 +1,106 @@
+//webfont('RUB', 'rouble-webfont', 'normal')
+//Add fotn rub write .rub a - (a,b,c,d - change type font)
+
+//webfont('PT Sans', 'PT Sans', 'normal')
+$v-font =  'Open Sans', sans-serif
+
+
+typeSize(fontSm,font)
+	+below(768px)
+		font-size font px
+	font-size fontSm px
+
+.type--xs
+	typeSize(12,10)
+
+.type--sm
+	typeSize(13,10)
+
+.type--main
+	typeSize(14,12)
+
+.type--md
+	typeSize(16,14)
+
+.type--lg
+	typeSize(18,16)
+	font-weight:700
+
+.type--xl
+	typeSize(24,20)
+	font-weight:700
+
+.type--xxl
+	typeSize(36,24)
+	font-weight:700
+
+.type--extra
+	typeSize(50,28)
+	font-weight:900
+
+
+.type--bold
+	font-weight bold
+
+h1
+	@extend .type--extra
+h2
+	@extend .type--xxl
+h3
+	@extend .type--xl
+h4
+	@extend .type--lg
+h5
+	@extend .type--md
+
+a
+	color $link-color
+	text-decoration: none
+	&:hover
+		color darken($link-color,20)
+	&:visiter
+		color darken($link-color,30)
+
+p
+	@extend .type--main
+
+.link--mark
+	color $mark
+	&:hover
+		color $mark
+	&:visiter
+		color darken($mark,10)
+
+.link--main
+	color $mark
+	opacity 0.6
+	tr(all)
+	hover-underline(1px,'solid',$mark)
+	&:hover
+		color darken($mark,20)
+		opacity 1
+	&:visiter
+		color darken($mark,30)
+		opacity 1
+
+
+.link--text
+	color $link-color
+	text-decoration underline
+	&:hover
+		text-decoration none
+
+.type--mark
+	color $mark
+
+.text
+	p
+		line-height: 1.6
+		margin-bottom: 30px
+	ul
+		margin-bottom: 30px
+		li
+			line-height: 1.6
+			margin-bottom: 10px
+			&:last-child
+				margin-bottom: 0
